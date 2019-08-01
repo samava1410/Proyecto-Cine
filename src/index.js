@@ -17,6 +17,6 @@ const routes = require('./routes/routes');
 app.use('/', routes);
 
 //Iniciar servidor Express
-app.listen(app.set('port'), () => {
+app.listen(3000, () => {
     console.log('Servidor escuchando en :3000');
 });
