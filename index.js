@@ -5,6 +5,7 @@ const app = express();
 app.set('port', 3000);
 
 //Rutas
+app.get('/', (req, res) =>)
 
 //Iniciar servidor
 server.listen(app.get('port'), function () {
