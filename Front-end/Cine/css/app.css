@@ -1,0 +1,81 @@
+.color-font{
+    color : black;
+    font-family: "Roboto";
+}
+
+.color-bar{
+    color : white;
+    font-family: "Roboto";
+}
+
+font:hover{
+    color: #B22E2F ;
+}
+
+.hrlinea {
+    border-color: #1B2B32;
+}
+
+.menu{
+    font-size: 18px;
+    color: black;
+}
+
+.menu a:hover{   
+    font-size: 19px;
+    
+}
+
+.menu-peliculas a:hover{
+    background: #B22E2F;
+    color: white;
+}
+
+.submenu a:hover{
+    color: white;
+    background: #B22E2F;
+}
+
+.imgen{
+    width: 300px;
+    height: 400px;
+}
+
+.pie{
+    color: white;
+}
+
+.step {
+    display: inline-block;
+    line-height: 1;
+    width: 10%;
+}
+
+.size-72 { 
+    font-size: 72px;
+    color: white;
+}
+
+
+form .form-icons {
+  text-align: center;
+}
+
+form .form-icons h4 {
+  margin-bottom: 1rem;
+}
+
+form .form-icons .input-group-label {
+  background-color: #1B2B32;
+  border-color: #1B2B32;
+}
+
+form .form-icons .input-group-field {
+  border-color: #1B2B32;
+}
+
+form .form-icons .fa {
+  color: white;
+  width: 1rem;
+}
+
