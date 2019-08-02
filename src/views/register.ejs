@@ -33,11 +33,11 @@ and open the template in the editor.
             </div>
             <div class="column small-6">
                 <div class="form-registration ">
-                    <form class="callout text-center">
+                    <form class="callout text-center" action="/register" method="POST">
                         <h2>Registro de usuario</h2>
                         <div class="floated-label-wrapper">
                             <label for="full-name">cedula</label>
-                            <input type="number" id="full-name" name="cedula" placeholder="Nombres">
+                            <input type="number" id="cc" name="cc" placeholder="C.C">
                         </div>
                         <div class="floated-label-wrapper">
                             <label for="full-name">Nombres</label>
@@ -49,7 +49,7 @@ and open the template in the editor.
                         </div>
                         <div class="floated-label-wrapper">
                             <label for="email">Nombre de usuario</label>
-                            <input type="email" id="email" name="usuario" placeholder="Email">
+                            <input type="text" id="email" name="usuario" placeholder="Nombre de Usuario">
                         </div>
                         <div class="floated-label-wrapper">
                             <label for="email">Email</label>
@@ -74,7 +74,7 @@ and open the template in the editor.
                                
                             </div>
                             <div class="medium-4 columns">
-                                <input class="button primary " type="text" value="CREAR CUENTA">
+                                <input class="button primary " type="submit" value="CREAR CUENTA">
                             </div>
                            
                             <div class="medium-2 columns">

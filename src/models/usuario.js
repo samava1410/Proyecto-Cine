@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var schemaUsuario = mongoose.Schema({
-    cedula: {
+const schemaUsuarios = new Schema({
+    cc: {
         type: String,
         required: "El numero de cedula es obligatorio",
         unique: true,
-        trim: true,
-        match: [/^[0123456789]{8,12}$/, "La cedula solo puede tener numeros"]
+        trim: true//,
+        /*match: [/^[0123456789]{8,12}$/, "La cedula solo puede tener numeros"],
+        validate: [
+            function (input) {
+                return input.length <= 12 || input.length >= 8;
+            },
+            "La cedula debe contener entre 8 y 12 digitos."
+        ]*/
     },
 
     usuario: {
@@ -14,7 +21,7 @@ var schemaUsuario = mongoose.Schema({
         trim: true,
         required: "El nombre de usuario es obligatorio",
         unique: true,
-        match: [/^[a-z0-9_-]{4,16}$/, "El usuario solo puede tener letras y numeros"]
+        match: [/^[a-z0-9_-]{6,20}$/, "El usuario solo puede tener caracteres alfanumericos"]
     },
 
     email: {
@@ -39,17 +46,16 @@ var schemaUsuario = mongoose.Schema({
 
     nombres: {
         type: String,
-        match: [/^a-zA-z$/, "Por favor ingrese un correo electronico valido"],
+        match: [/^[a-zA-Z]+$/, "Los nombres solo pueden tener caracteres alfabeticos"],
         required: "El nombre es obligatorio",
     },
 
     apellidos: {
         type: String,
-        match: [/^a-zA-z$/, "Por favor ingrese un correo electronico valido"],
-        required: "Los apellidos son obligatorio",
-    },
-
+        match: [/^[a-zA-Z]+$/, "Los apellidos solo pueden tener caracteres alfabeticos"],
+        required: "Los apellidos son obligatorios",
+    }
 
 });
 
-module.exports = mongoose.model('usuario', schemaUsuario);
+module.exports = mongoose.model('usuario', schemaUsuarios);
