@@ -19,7 +19,7 @@ const schemaReservas = new Schema({
         
     },
 
-    columna: {
+    columnaPeli: {
         type: String,
         trim: true,
         
