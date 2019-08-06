@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const schemaUsuario = require('../models/usuario');
-const schemaReservas= require('../models/reservas');
+const schemaReservas = require('../models/reservas');
 
 
 router.get('/', (req, res) => {
@@ -11,20 +11,35 @@ router.get('/', (req, res) => {
 });
 
 router.get('/reservations', async (req, res) => {
-    const reservas = await schemaReservas.find();
-   
-    for(var i =0; i< reservas.length; i++){
-        console.log(reservas[i].fila);
-        console.log(reservas[i].columna);
-        
-    }
-    
+
+
     res.render('reservations');
 });
 
-router.post('/reservations',async (req, res) => {
+router.post('/reservations', async (req, res) => {
+    const reserva1 = await schemaReservas.find();
+    console.log(req.body.fila);
     const reserva = new schemaReservas(req.body);
-    await reserva.save();    
+
+    if (reserva1.length == 0) {
+        console.log("Añadido");
+        await reserva.save();
+        res.redirect('/');
+    }
+
+    else {
+        for (var i = 0; i < reserva1.length; i++) {
+            if (req.body.fila == reserva1[i].fila) {
+                console.log("NO");
+                res.send("NO SE PUEDE");
+            } else {
+                console.log("Añadido");
+                await reserva.save();
+                res.redirect('/');
+            }
+        }
+        res.redirect('/');
+    }
 });
 
 router.get('/register', (req, res) => {
@@ -75,7 +90,7 @@ router.post('/register', async (req, res) => {
     await usuario.save();
     console.log("esquema GUARDADO");
 
-    res.redirect('/',);
+    res.redirect('/');
 
 });
 

@@ -33,7 +33,14 @@ const schemaReservas = new Schema({
     sala: {
         type: String,
         trim: true,
+    },
+
+    fecha: {
+        type: Date,
+        
     }
+
+
 
 });
 

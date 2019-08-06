@@ -9,8 +9,8 @@
 
     <script>
         function borrar() {
-          var sel = document.getElementById("varios");
-          sel.remove(sel.selectedIndex);
+            var sel = document.getElementById("varios");
+            sel.remove(sel.selectedIndex);
         }
     </script>
 
@@ -57,8 +57,9 @@
                                             Estrenos</a>
                                     </li>
                                     <li class="nav-item">
-                                            <a style="font-weight:500;" href="/reservations" class="nav-link" >Reservaciones</a>
-                                        </li>
+                                        <a style="font-weight:500;" href="/reservations"
+                                            class="nav-link">Reservaciones</a>
+                                    </li>
                                 </ul>
                                 <div class="header_social_icon d-none d-lg-block maxli">
                                     <ul>
@@ -79,123 +80,140 @@
     </header>
     <!-- Header part end-->
 
-    
+
     <!---728x90--->
     <div class="mid-class centerdiv">
         <div class="txt-left-side centerdiv">
             <h2>Reservas</h2>
-            <form action="#" method="post">
+            <form action="/reservations" method="post">
 
                 <div class="form-left-to-w3l ">
-                        <div class="container">
-                                <div class="columns">
-                                  <div class="row-sm">
-                                        <div class="row">
-                                                <div class="col-sm">
-                                                        <label>Seleccione la sala </label>
-                                                        <select class="form-control" name="sala">
-                                                            <option>Sala 1</option>
-                                                            <option>Sala 2</option>
-                                    
-                                                        </select>
-                                                </div>
-                                                <div class="col-sm">
-                                                        <label>Seleccione su pelicula </label>
-                                                        <select class="form-control" name="pelicula">
-                                                            <option>El rey león</option>
-                                                            <option>Rapidos y furiosos</option>
-                                                            <option>El sendero de la anaconda</option>
-                                    
-                                                        </select>
-                                                </div>
-                                        </div>
-                                        
+                    <div class="container">
+                        <div class="columns">
+                            <div class="row-sm">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <label>Seleccione la sala </label>
+                                        <select class="form-control" name="sala">
+                                            <option>Sala 1</option>
+                                            <option>Sala 2</option>
+
+                                        </select>
                                     </div>
-                                  
+                                    <div class="col-sm">
+                                        <label>Seleccione su pelicula </label>
+                                        <select class="form-control" name="pelicula">
+                                            <option>El rey león</option>
+                                            <option>Rapidos y furiosos</option>
+                                            <option>El sendero de la anaconda</option>
+
+                                        </select>
+                                    </div>
                                 </div>
-                              </div>
 
-                    
+                            </div>
 
-                    
+                        </div>
+                    </div>
+
+
+
+
 
                     <div class="clear"></div>
                 </div>
 
 
                 <div class="form-left-to-w3l ">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="row-sm">
+                                    <label>Seleccione la función </label>
 
-                    <label>Seleccione la función </label>
-                    <select class="form-control" name="funcion">
-                        <option>09:00 AM</option>
-                        <option>11:00 AM</option>
-                        <option>03:00 PM</option>
-                        <option>06:00 PM</option>
-                        <option>9:00 PM</option>
+                                <div class="row">
+                                    <div class="col-sm">
 
-                    </select>
+                                        <label>Fecha </label>
+                                        <input type="date" name="fecha" required>
+                                    </div>
+                                    <div class="col-sm">
+                                        <label>Hora</label>
+                                        <select class="form-control" name="funcion">
+                                            <option>09:00 AM</option>
+                                            <option>11:00 AM</option>
+                                            <option>03:00 PM</option>
+                                            <option>06:00 PM</option>
+                                            <option>9:00 PM</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <div class="clear"></div>
                 </div>
 
                 <div class="form-left-to-w3l ">
-                        <div class="container">
-                                <div class="columns">
-                                  <div class="row-sm">
-                                        <div class="row">
-                                                <div class="col-sm">
-                                                        <label>Seleccione fila (A,B,C,D) </label>
-                                                        <select class="form-control" name="fila">
-                                                            <option>Fila A</option>
-                                                            <option>Fila B</option>
-                                                            <option>Fila C</option>
-                                                            <option>Fila D</option>
-                                    
-                                                        </select>
-                                                </div>
-                                                <div class="col-sm">
-                                                        <label>Seleccione la columna </label>
-                                                        <select class="form-control" name="columna" id="varios">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                            <option>6</option>
-                                                            <option>7</option>
-                                                            <option>8</option>
-                                                            <option>9</option>
-                                                            <option>10</option>
-                                    
-                                                        </select>
-                                                </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col"></div>
-                                            <div class="col-10">
-                                                    <img src="image/sillas.jpg" alt="" title="" />
-                                            </div>
-                                            <div class="col"></div>
-                                                
-                                        </div>
-                                        
+                    <div class="container">
+                        <div class="columns">
+                            <div class="row-sm">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <label>Seleccione fila (A,B,C,D) </label>
+                                        <select class="form-control" name="fila">
+                                            <option>Fila A</option>
+                                            <option>Fila B</option>
+                                            <option>Fila C</option>
+                                            <option>Fila D</option>
+
+                                        </select>
                                     </div>
-                                  
+                                    <div class="col-sm">
+                                        <label>Seleccione la columna </label>
+                                        <select class="form-control" name="columna" id="varios">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+
+                                        </select>
+                                    </div>
                                 </div>
-                              </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-10">
+                                        <img src="image/sillas.jpg" alt="" title="" />
+                                    </div>
+                                    <div class="col"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
                     <div class="clear"></div>
                 </div>
 
                 <div class="form-left-to-w3l">
                     <span class='far fa-file-word' aria-hidden="true"></span>
-                    <input type="text" id="full-name" name="codigo" placeholder="Digite un código de promoción"
-                        required="">
+                    <input type="text" id="full-name" name="codigo" placeholder="Digite un código de promoción">
 
                     <div class="clear"></div>
                 </div>
 
                 <div class="btnn">
-                    <button type="submit" onclick="borrar()" >Reservar </button>
+                    <button type="submit" onclick="borrar()">Reservar </button>
                 </div>
             </form>
 
