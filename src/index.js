@@ -19,6 +19,8 @@ mongoose.connect('mongodb://localhost/Cine', { useNewUrlParser: true })
 
 mongoose.set('useCreateIndex', true);
 
+
+
 //Configuracion de las vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

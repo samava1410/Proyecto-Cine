@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
     res.render('principal');
 });
 
+router.get('/reservations', (req, res) => {
+    res.render('reservations');
+});
+
 router.get('/register', (req, res) => {
     res.render('register');
 });
