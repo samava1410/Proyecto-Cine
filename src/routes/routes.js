@@ -82,7 +82,7 @@ router.post('/reservations', async (req, res) => {
         }
         else {
             console.log("Añadido NORMAL");
-            await reserva.save(); 
+            await reserva.save();
             res.redirect('/reservations2');
         }
     }
@@ -105,8 +105,24 @@ router.get('/sign_up', (req, res) => {
 });
 
 
-router.get('/login2', (req, res) => {
-    res.render('login2');
+router.post('/login', async (req, res) => {
+    const usuarios = await schemaUsuario.find();
+    var flag = false;
+
+    for (var i = 0; i < usuarios.length; i++) {
+
+        if (usuarios[i].usuario == req.body.usuario && usuarios[i].contrasena == req.body.contrasena) {
+            flag = true;
+        }
+    }
+
+    if (flag) {
+        req.session.mail = req.body.email;
+        res.redirect('/');
+    }
+    else {
+        res.render('login2', { "mensaje": "Contrasena o usuario invalido" });
+    }
 });
 
 router.get('/poster', (req, res) => {
@@ -149,7 +165,14 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+
+    if (req.session.mail) {
+        res.redirect('/');
+    }
+    else {
+        res.render('login', { "mensaje": "" });
+    }
+
 });
 
 module.exports = router;
