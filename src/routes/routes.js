@@ -16,12 +16,10 @@ router.post('/register', async (req, res) => {
 
     console.log("Entro");
 
-    //req.body.cc = parseInt(req.body.cc);
+    req.body.cc = parseInt(req.body.cc);
 
     const usuario = new schemaUsuario(req.body);
-    console.log("esquema creado");
     await usuario.save();
-    console.log("esquema GUARDADO");
 
     res.redirect('/',);
 
