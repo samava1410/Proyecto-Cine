@@ -8,7 +8,7 @@ const schemaReservas = new Schema({
         
     },
 
-    funcion: {
+    hora: {
         type: String,
         trim: true,
     },

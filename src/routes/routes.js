@@ -20,25 +20,29 @@ router.post('/reservations', async (req, res) => {
     const reserva1 = await schemaReservas.find();
     const reserva = new schemaReservas(req.body);
 
-    for(var i = 0 ; i < reserva1.length ; i++){
-        console.log(req.body.sala);
-        console.log(reserva1[i].sala);
+    const precio =0;
+    if(reserva.hora =='09:00 AM'){
+        precio= 5000;
+        console.log(reserva.hora + ' tiene un precio de ' + precio);
     }
+    
 
     var flag = false;
 
     if (reserva1.length == 0) {
-        console.log("Añadido EMPTY");
+        console.log("reserva1");
         await reserva.save();
         res.redirect('/reservations2');
     }
 
+
     else {
         for (var i = 0; i < reserva1.length; i++) {
-            if (req.body.fila == reserva1[i].fila && req.body.sala == reserva1[i].sala
-                && req.body.pelicula == reserva1[i].pelicula && req.body.columna == reserva1[i].columna
-                && req.body.fecha == reserva1[i].fecha && req.body.hora == reserva1[i].hora) {
-                    
+
+            if (reserva.fila == reserva1[i].fila && reserva.sala == reserva1[i].sala
+                && reserva.pelicula == reserva1[i].pelicula && reserva.columnaPeli == reserva1[i].columnaPeli
+                && String(reserva.fecha) == String(reserva1[i].fecha) && reserva.hora == reserva1[i].hora) {
+                    console.log("ENTRO A LA VALIDACION")
                 flag = true;
             }
         }
@@ -62,6 +66,7 @@ router.get('/reservations2', (req, res) => {
     res.render('reservations2');
 });
 
+    
 router.get('/register', (req, res) => {
     res.render('register');
 });
@@ -103,10 +108,12 @@ router.post('/register', async (req, res) => {
 
     console.log("Entro");
 
-    req.body.cc = parseInt(req.body.cc);
+    //req.body.cc = parseInt(req.body.cc);
 
     const usuario = new schemaUsuario(req.body);
+    console.log("esquema creado");
     await usuario.save();
+    console.log("esquema GUARDADO");
 
     res.redirect('/');
 
