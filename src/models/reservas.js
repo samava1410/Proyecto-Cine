@@ -38,7 +38,12 @@ const schemaReservas = new Schema({
     fecha: {
         type: Date,
         
+    },
+
+    precio:{
+        type: String
     }
+
 
 
 
