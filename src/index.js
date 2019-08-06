@@ -4,12 +4,14 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const session = require('express-session');
 
 
-//app.use(express.urlencoded({extended: false}));
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('dev'));
+app.use(session({secret: '123456', resave: true, saveUninitialized: true}));
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, "../public/")));
