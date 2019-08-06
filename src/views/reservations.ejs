@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<% include parts/head %>
+<link href="css/style2.css" rel='stylesheet' type='text/css' media="all">
+
+<body>
+
+    <script>
+        function borrar() {
+          var sel = document.getElementById("varios");
+          sel.remove(sel.selectedIndex);
+        }
+    </script>
+
+    <!--::header part start::-->
+    <header class="header_area">
+        <div class="sub_header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 col-xl-6">
+                        <div id="logo">
+                            <a href="/"><img src="image/logo.png" alt="" title="" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-xl-6">
+                        <div class="sub_header_social_icon float-right">
+                            <a style="font-weight:550;" href="/sign_up" class="register_icon"><i
+                                    class="ti-arrow-right"></i>Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse agrandar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a style="font-weight:500;" class="nav-link active" href="/">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="font-weight:500;" href="/poster" class="nav-link">Cartelera</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="font-weight:500;" href="/premieres" class="nav-link">Proximos
+                                            Estrenos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a style="font-weight:500;" href="/reservations" class="nav-link" >Reservaciones</a>
+                                        </li>
+                                </ul>
+                                <div class="header_social_icon d-none d-lg-block maxli">
+                                    <ul>
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li>
+                                            <a href="#"> <i class="ti-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+    
+    <!---728x90--->
+    <div class="mid-class centerdiv">
+        <div class="txt-left-side centerdiv">
+            <h2>Reservas</h2>
+            <form action="#" method="post">
+
+                <div class="form-left-to-w3l ">
+                        <div class="container">
+                                <div class="columns">
+                                  <div class="row-sm">
+                                        <div class="row">
+                                                <div class="col-sm">
+                                                        <label>Seleccione la sala </label>
+                                                        <select class="form-control" name="sala">
+                                                            <option>Sala 1</option>
+                                                            <option>Sala 2</option>
+                                    
+                                                        </select>
+                                                </div>
+                                                <div class="col-sm">
+                                                        <label>Seleccione su pelicula </label>
+                                                        <select class="form-control" name="pelicula">
+                                                            <option>El rey león</option>
+                                                            <option>Rapidos y furiosos</option>
+                                                            <option>El sendero de la anaconda</option>
+                                    
+                                                        </select>
+                                                </div>
+                                        </div>
+                                        
+                                    </div>
+                                  
+                                </div>
+                              </div>
+
+                    
+
+                    
+
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="form-left-to-w3l ">
+
+                    <label>Seleccione la función </label>
+                    <select class="form-control" name="funcion">
+                        <option>09:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>03:00 PM</option>
+                        <option>06:00 PM</option>
+                        <option>9:00 PM</option>
+
+                    </select>
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="form-left-to-w3l ">
+                        <div class="container">
+                                <div class="columns">
+                                  <div class="row-sm">
+                                        <div class="row">
+                                                <div class="col-sm">
+                                                        <label>Seleccione fila (A,B,C,D) </label>
+                                                        <select class="form-control" name="fila">
+                                                            <option>Fila A</option>
+                                                            <option>Fila B</option>
+                                                            <option>Fila C</option>
+                                                            <option>Fila D</option>
+                                    
+                                                        </select>
+                                                </div>
+                                                <div class="col-sm">
+                                                        <label>Seleccione la columna </label>
+                                                        <select class="form-control" name="columna" id="varios">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                            <option>9</option>
+                                                            <option>10</option>
+                                    
+                                                        </select>
+                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"></div>
+                                            <div class="col-10">
+                                                    <img src="image/sillas.jpg" alt="" title="" />
+                                            </div>
+                                            <div class="col"></div>
+                                                
+                                        </div>
+                                        
+                                    </div>
+                                  
+                                </div>
+                              </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="form-left-to-w3l">
+                    <span class='far fa-file-word' aria-hidden="true"></span>
+                    <input type="text" id="full-name" name="codigo" placeholder="Digite un código de promoción"
+                        required="">
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="btnn">
+                    <button type="submit" onclick="borrar()" >Reservar </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <br><br><br>
+
+
+    <% include parts/footer %>
+
+    <% include parts/javascript %>
+
+</body>
+
+</html>
