@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const schemaUsuario = require('../models/usuario');
+const schemaReservas= require('../models/reservas');
+
 
 router.get('/', (req, res) => {
     res.render('principal');
@@ -10,6 +12,12 @@ router.get('/', (req, res) => {
 
 router.get('/reservations', (req, res) => {
     res.render('reservations');
+});
+
+router.post('/reservations',async (req, res) => {
+    const reserva = new schemaReservas(req.body);
+    await reserva.save();    
+    res.send('received');
 });
 
 router.get('/register', (req, res) => {
