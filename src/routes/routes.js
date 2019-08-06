@@ -141,7 +141,7 @@ router.get('/login', (req, res) => {
         res.redirect('/');
     }
     else {
-        res.render('login', { "mensaje": "" });
+        res.render('login2', { "mensaje": "" });
     }
 
 });
