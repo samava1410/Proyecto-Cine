@@ -18,20 +18,27 @@ router.get('/reservations', async (req, res) => {
 
 router.post('/reservations', async (req, res) => {
     const reserva1 = await schemaReservas.find();
-    console.log(req.body.columnaPeli);
     const reserva = new schemaReservas(req.body);
+
+    for(var i = 0 ; i < reserva1.length ; i++){
+        console.log(req.body.sala);
+        console.log(reserva1[i].sala);
+    }
 
     var flag = false;
 
     if (reserva1.length == 0) {
         console.log("Añadido EMPTY");
         await reserva.save();
-        res.redirect('/');
+        res.redirect('/reservations2');
     }
 
     else {
         for (var i = 0; i < reserva1.length; i++) {
-            if (req.body.fila == reserva1[i].fila) {
+            if (req.body.fila == reserva1[i].fila && req.body.sala == reserva1[i].sala
+                && req.body.pelicula == reserva1[i].pelicula && req.body.columna == reserva1[i].columna
+                && req.body.fecha == reserva1[i].fecha && req.body.hora == reserva1[i].hora) {
+                    
                 flag = true;
             }
         }
