@@ -20,17 +20,46 @@ router.post('/reservations', async (req, res) => {
     const reserva1 = await schemaReservas.find();
     const reserva = new schemaReservas(req.body);
 
-    const precio =0;
-    if(reserva.hora =='09:00 AM'){
-        precio= 5000;
-        console.log(reserva.hora + ' tiene un precio de ' + precio);
+    var precio;
+
+    if(reserva.codigo != ''){
+        if(reserva.hora =='09:00 AM' || reserva.hora == '11:00 AM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $4000';
+            console.log(precio);
+        }
+        else if(reserva.hora == '03:00 PM'|| reserva.hora =='06:00 PM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $5600';
+            console.log(precio);
+        }
+        else if (reserva.hora == '09:00 PM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $7200';
+            console.log(precio);
+        }
+    
     }
+    else{
+        if(reserva.hora =='09:00 AM' || reserva.hora == '11:00 AM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $5000';
+            console.log(precio);
+        }
+        else if(reserva.hora == '03:00 PM'|| reserva.hora =='06:00 PM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $7000';
+            console.log(precio);
+        }
+        else if (reserva.hora == '09:00 PM'){
+            precio = 'la función de ' + reserva.hora + ' tiene un precio de $9000';
+            console.log(precio);
+        }
+    
+    }
+    
+    
+    
     
 
     var flag = false;
 
     if (reserva1.length == 0) {
-        console.log("reserva1");
         await reserva.save();
         res.redirect('/reservations2');
     }
