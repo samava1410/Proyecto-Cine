@@ -92,7 +92,7 @@ router.post('/login', async (req, res) => {
         res.redirect('/');
     }
     else {
-        res.render('login', { "mensaje": "Contrasena o usuario invalido" });
+        res.render('login2', { "mensaje": "Contrasena o usuario invalido" });
     }
 });
 
@@ -136,7 +136,14 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login2', {mensaje: ""} );
+
+    if (req.session.mail) {
+        res.redirect('/');
+    }
+    else {
+        res.render('login', { "mensaje": "" });
+    }
+
 });
 
 module.exports = router;
