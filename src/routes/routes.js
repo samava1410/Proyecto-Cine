@@ -10,14 +10,21 @@ router.get('/', (req, res) => {
     res.render('principal');
 });
 
-router.get('/reservations', (req, res) => {
+router.get('/reservations', async (req, res) => {
+    const reservas = await schemaReservas.find();
+   
+    for(var i =0; i< reservas.length; i++){
+        console.log(reservas[i].fila);
+        console.log(reservas[i].columna);
+        
+    }
+    
     res.render('reservations');
 });
 
 router.post('/reservations',async (req, res) => {
     const reserva = new schemaReservas(req.body);
     await reserva.save();    
-    res.send('received');
 });
 
 router.get('/register', (req, res) => {
