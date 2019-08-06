@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<% include parts/head %>
+<link href="css/style2.css" rel='stylesheet' type='text/css' media="all">
+
+<body>
+
+  <!--::header part start::-->
+ <header class="header_area">
+        <div class="sub_header">
+            <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-md-4 col-xl-6">
+                      <div id="logo">
+                          <a href="/"><img src="image/logo.png" alt="" title="" /></a>
+                      </div>
+                  </div>
+                  <div class="col-md-8 col-xl-6">
+                      <div class="sub_header_social_icon float-right">
+                        <a style="font-weight:550;" href="/sign_up" class="register_icon"><i class="ti-arrow-right"></i>Registrarse</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+    
+                            <div class="collapse navbar-collapse agrandar" id="navbarSupportedContent" >
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a style="font-weight:500;" class="nav-link active" href="/">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="font-weight:500;" href="/poster" class="nav-link">Cartelera</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a style="font-weight:500;" href="/premieres" class="nav-link">Proximos Estrenos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="gallery.html" class="nav-link">gallery</a>
+                                    </li>
+                                </ul>
+                                <div class="header_social_icon d-none d-lg-block maxli">
+                                    <ul>
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li>
+                                            <a href="#"> <i class="ti-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header part end-->
+
+
+	<!---728x90--->
+        <div class="mid-class centerdiv">
+            <div class="txt-left-side centerdiv">
+                <h2>Iniciar Sesión</h2>
+                <form action="#" method="post">
+                    <div class="form-left-to-w3l">
+                        <span class='fas fa-user' aria-hidden="true"></span>
+                        <input type="text" id="full-name" name="nombres" placeholder="Nombre de Usuario" required="">
+
+                        <div class="clear"></div>
+                    </div>
+                   
+                    <div class="form-left-to-w3l ">
+
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <input type="password" id="pass" name="contrasena" placeholder="Contraseña" required="">
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="btnn">
+                        <button type="submit">Ingresar </button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+        <br><br><br>
+    
+
+   <% include parts/footer %>
+
+   <% include parts/javascript %>
+
+</body>
+</html>

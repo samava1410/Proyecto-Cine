@@ -5,11 +5,44 @@ const router = express.Router();
 const schemaUsuario = require('../models/usuario');
 
 router.get('/', (req, res) => {
-    res.render('index');
+    res.render('principal');
 });
 
 router.get('/register', (req, res) => {
     res.render('register');
+});
+
+router.get('/sign_up', (req, res) => {
+    res.render('sign_up');
+});
+
+
+router.get('/login2', (req, res) => {
+    res.render('login2');
+});
+
+router.get('/poster', (req, res) => {
+    res.render('poster');
+});
+
+router.get('/premieres', (req, res) => {
+    res.render('premieres');
+});
+
+router.get('/toy', (req, res) => {
+    res.render('toy');
+});
+
+router.get('/rapido', (req, res) => {
+    res.render('rapido');
+});
+
+router.get('/spiderman', (req, res) => {
+    res.render('spiderman');
+});
+
+router.get('/leon', (req, res) => {
+    res.render('leon');
 });
 
 router.post('/register', async (req, res) => {

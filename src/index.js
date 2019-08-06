@@ -4,9 +4,13 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
+
 //app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+//archivos estaticos
+app.use(express.static(path.join(__dirname, "../public/")));
 
 //Conexion con la BD Mongo
 mongoose.connect('mongodb://localhost/Cine', { useNewUrlParser: true })
@@ -18,6 +22,7 @@ mongoose.set('useCreateIndex', true);
 //Configuracion de las vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 
 //Configuracion de las rutas
 const routes = require('./routes/routes');
