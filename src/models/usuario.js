@@ -6,14 +6,14 @@ const schemaUsuarios = new Schema({
         type: String,
         required: "El numero de cedula es obligatorio",
         unique: true,
-        trim: true//,
-        /*match: [/^[0123456789]{8,12}$/, "La cedula solo puede tener numeros"],
+        trim: true,
+        match: [/^[0123456789]{8,12}$/, "La cedula solo puede tener numeros"],
         validate: [
             function (input) {
                 return input.length <= 12 || input.length >= 8;
             },
             "La cedula debe contener entre 8 y 12 digitos."
-        ]*/
+        ]
     },
 
     usuario: {
