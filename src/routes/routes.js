@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const schemaUsuario = require('../models/usuario');
-const schemaReservas= require('../models/reservas');
+const schemaReservas = require('../models/reservas');
 
 
 router.get('/', (req, res) => {
@@ -11,20 +11,48 @@ router.get('/', (req, res) => {
 });
 
 router.get('/reservations', async (req, res) => {
-    const reservas = await schemaReservas.find();
-   
-    for(var i =0; i< reservas.length; i++){
-        console.log(reservas[i].fila);
-        console.log(reservas[i].columna);
-        
-    }
-    
+
+
     res.render('reservations');
 });
 
-router.post('/reservations',async (req, res) => {
+router.post('/reservations', async (req, res) => {
+    const reserva1 = await schemaReservas.find();
+    console.log(req.body.columnaPeli);
     const reserva = new schemaReservas(req.body);
-    await reserva.save();    
+
+    var flag = false;
+
+    if (reserva1.length == 0) {
+        console.log("Añadido EMPTY");
+        await reserva.save();
+        res.redirect('/');
+    }
+
+    else {
+        for (var i = 0; i < reserva1.length; i++) {
+            if (req.body.fila == reserva1[i].fila) {
+                flag = true;
+            }
+        }
+
+        if (flag) {
+            console.log("NO");
+            res.redirect('/reservations1');
+        }
+        else {
+            console.log("Añadido NORMAL");
+            await reserva.save(); 
+            res.redirect('/reservations2');
+        }
+    }
+});
+
+router.get('/reservations1', (req, res) => {
+    res.render('reservations1');
+});
+router.get('/reservations2', (req, res) => {
+    res.render('reservations2');
 });
 
 router.get('/register', (req, res) => {
@@ -73,7 +101,7 @@ router.post('/register', async (req, res) => {
     const usuario = new schemaUsuario(req.body);
     await usuario.save();
 
-    res.redirect('/',);
+    res.redirect('/');
 
 });
 

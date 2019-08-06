@@ -3,11 +3,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
+const morgan = require('morgan')
 
 
 //app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(morgan('dev'));
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, "../public/")));
